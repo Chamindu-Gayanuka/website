@@ -1,14 +1,10 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-    @vite('resources/css/app.css')
-    @vite('resources/js/app.js')
-</head>
-<body>
-    <h1>Home</h1>
+@extends('layout.default')
+
+@section('header')
+    <h2>This is the header</h2>
+@endsection
+
+@section('mainContent')
     <form action="{{ url('/formSubmitted') }}" method="post">
         @csrf
         <label for="fullName">Full Name: </label>
@@ -23,5 +19,8 @@
 
         <button type="submit">Submit</button>
     </form>
-</body>
-</html>
+@endsection
+
+@section('footer')
+    <h2>This is the footer</h2>
+@endsection
