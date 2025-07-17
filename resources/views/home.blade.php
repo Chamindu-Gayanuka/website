@@ -1,11 +1,13 @@
 @extends('layout.default')
+<h2>This is the header</h2>
 
+@include('sidemenu')
 @section('header')
     <h2>This is the header</h2>
 @endsection
 
 @section('mainContent')
-    <form action="{{ url('/formSubmitted') }}" method="post">
+    <form action="{{ route('formSubmitted') }}" method="post">
         @csrf
         <label for="fullName">Full Name: </label>
         <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name" required>
